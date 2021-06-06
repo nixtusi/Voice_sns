@@ -43,6 +43,10 @@ class AddViewController: UIViewController {
             }
     }
     
+    @IBAction func closeModal() {
+        self.dismiss(animated: true, completion: nil)
+    }
+
     func setupTextView() {
         let toolBar = UIToolbar() // キーボードの上に置くツールバーの生成
         let flexibleSpaceBarButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil) // 今回は、右端にDoneボタンを置きたいので、左に空白を入れる

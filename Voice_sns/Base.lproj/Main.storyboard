@@ -290,7 +290,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="キャンセル"/>
                                 <connections>
-                                    <segue destination="kOR-gc-oCG" kind="presentation" modalPresentationStyle="fullScreen" id="www-Kx-Hv6"/>
+                                    <action selector="closeModal" destination="lbE-XW-HnR" eventType="touchUpInside" id="g0y-CH-4f5"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -308,7 +308,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="www-Kx-Hv6"/>
+        <segue reference="Apb-1h-FAb"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="labelColor">
