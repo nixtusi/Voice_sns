@@ -23,6 +23,9 @@
 		DA008DF8265A1F88003EA83B /* TimelineController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA008DF7265A1F88003EA83B /* TimelineController.swift */; };
 		DA008DFA265A202F003EA83B /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA008DF9265A202F003EA83B /* AccountViewController.swift */; };
 		DA9D0B29265A00A500B6A5E7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DA9D0B28265A00A500B6A5E7 /* GoogleService-Info.plist */; };
+		DAA04D46266C5C7B002D6C36 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA04D45266C5C7B002D6C36 /* AddViewController.swift */; };
+		DAA04D48266C951A002D6C36 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA04D47266C951A002D6C36 /* SettingsViewController.swift */; };
+		DAB05C07266C9C60001AFFEF /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB05C06266C9C60001AFFEF /* SignInViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +74,9 @@
 		DA008DF7265A1F88003EA83B /* TimelineController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineController.swift; sourceTree = "<group>"; };
 		DA008DF9265A202F003EA83B /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		DA9D0B28265A00A500B6A5E7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DAA04D45266C5C7B002D6C36 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
+		DAA04D47266C951A002D6C36 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		DAB05C06266C9C60001AFFEF /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +154,9 @@
 				DA008DF5265A1EED003EA83B /* AppUser.swift */,
 				DA008DF7265A1F88003EA83B /* TimelineController.swift */,
 				DA008DF9265A202F003EA83B /* AccountViewController.swift */,
+				DAA04D45266C5C7B002D6C36 /* AddViewController.swift */,
+				DAA04D47266C951A002D6C36 /* SettingsViewController.swift */,
+				DAB05C06266C9C60001AFFEF /* SignInViewController.swift */,
 			);
 			path = Voice_sns;
 			sourceTree = "<group>";
@@ -424,11 +433,14 @@
 			files = (
 				DA008DF8265A1F88003EA83B /* TimelineController.swift in Sources */,
 				5A0AD78E264770C100624F78 /* ViewController.swift in Sources */,
+				DAA04D46266C5C7B002D6C36 /* AddViewController.swift in Sources */,
 				DA008DFA265A202F003EA83B /* AccountViewController.swift in Sources */,
 				DA008DF6265A1EED003EA83B /* AppUser.swift in Sources */,
 				5A0AD78A264770C100624F78 /* AppDelegate.swift in Sources */,
 				5A0AD78C264770C100624F78 /* SceneDelegate.swift in Sources */,
 				DA008DF4265A1D58003EA83B /* Post.swift in Sources */,
+				DAB05C07266C9C60001AFFEF /* SignInViewController.swift in Sources */,
+				DAA04D48266C951A002D6C36 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

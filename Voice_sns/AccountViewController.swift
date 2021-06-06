@@ -19,7 +19,9 @@ class AccountViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         auth = Auth.auth()
         emailTextField.delegate = self
+        emailTextField.placeholder = "メールアドレス"
         passwordTextField.delegate = self
+        passwordTextField.placeholder = "パスワード(6文字以上)"
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -41,9 +43,11 @@ class AccountViewController: UIViewController, UITextFieldDelegate {
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let nextViewController = segue.destination as! TimelineController
-        let user = sender as! User
-        nextViewController.me = AppUser(data: ["userID": user.uid])
+        if segue.identifier == "Timeline" {
+            let nextViewController = segue.destination as! TimelineController
+            let user = sender as! User
+            nextViewController.me = AppUser(data: ["userID": user.uid])
+        }
     }
     
     @IBAction func registerAccount() {
@@ -58,8 +62,9 @@ class AccountViewController: UIViewController, UITextFieldDelegate {
                         self.present(alert, animated: true, completion: nil)
                     }
                 })
-
-                self.performSegue(withIdentifier: "Timeline", sender: result.user)
+            }else{
+                print(error)
+                print(result)
             }
         }
         

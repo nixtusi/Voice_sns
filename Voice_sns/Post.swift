@@ -15,6 +15,7 @@ struct Post {
     let senderID: String
     let createAt: Timestamp
     let updateAt: Timestamp
+    let userName: String
     
     init(data: [String: Any]) {
         content = data["content"] as! String
@@ -22,6 +23,7 @@ struct Post {
         senderID = data["senderID"] as! String
         createAt = data["createdAt"] as! Timestamp
         updateAt = data["updatedAt"] as! Timestamp
+        userName = data["userName"] as? String ?? "匿名"
     }
     
 }
