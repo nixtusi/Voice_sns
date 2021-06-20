@@ -23,6 +23,7 @@
 		DA008DF8265A1F88003EA83B /* TimelineController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA008DF7265A1F88003EA83B /* TimelineController.swift */; };
 		DA008DFA265A202F003EA83B /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA008DF9265A202F003EA83B /* AccountViewController.swift */; };
 		DA67B5D0267EDAC4007E2CC5 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA67B5CF267EDAC4007E2CC5 /* TabViewController.swift */; };
+		DA67B5D2267F0C0F007E2CC5 /* AudioRecoeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA67B5D1267F0C0F007E2CC5 /* AudioRecoeder.swift */; };
 		DA9D0B29265A00A500B6A5E7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DA9D0B28265A00A500B6A5E7 /* GoogleService-Info.plist */; };
 		DAA04D46266C5C7B002D6C36 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA04D45266C5C7B002D6C36 /* AddViewController.swift */; };
 		DAA04D48266C951A002D6C36 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA04D47266C951A002D6C36 /* SettingsViewController.swift */; };
@@ -75,6 +76,7 @@
 		DA008DF7265A1F88003EA83B /* TimelineController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineController.swift; sourceTree = "<group>"; };
 		DA008DF9265A202F003EA83B /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		DA67B5CF267EDAC4007E2CC5 /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
+		DA67B5D1267F0C0F007E2CC5 /* AudioRecoeder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecoeder.swift; sourceTree = "<group>"; };
 		DA9D0B28265A00A500B6A5E7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DAA04D45266C5C7B002D6C36 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		DAA04D47266C951A002D6C36 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 				DAA04D47266C951A002D6C36 /* SettingsViewController.swift */,
 				DAB05C06266C9C60001AFFEF /* SignInViewController.swift */,
 				DA67B5CF267EDAC4007E2CC5 /* TabViewController.swift */,
+				DA67B5D1267F0C0F007E2CC5 /* AudioRecoeder.swift */,
 			);
 			path = Voice_sns;
 			sourceTree = "<group>";
@@ -435,6 +438,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA008DF8265A1F88003EA83B /* TimelineController.swift in Sources */,
+				DA67B5D2267F0C0F007E2CC5 /* AudioRecoeder.swift in Sources */,
 				5A0AD78E264770C100624F78 /* ViewController.swift in Sources */,
 				DAA04D46266C5C7B002D6C36 /* AddViewController.swift in Sources */,
 				DA008DFA265A202F003EA83B /* AccountViewController.swift in Sources */,

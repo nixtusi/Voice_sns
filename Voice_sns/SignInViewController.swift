@@ -22,11 +22,21 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         passwordTextField.placeholder = "パスワード"
     }
 
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "Timeline" {
+//            let user = sender as! User
+//            let destination = segue.destination as! TimelineController
+//            destination.me = AppUser(data: ["userID": user.uid])
+//        }
+//    }
+    
+   
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "Timeline" {
+            let nextViewController = segue.destination as! TabViewController
             let user = sender as! User
-            let destination = segue.destination as! TimelineController
-            destination.me = AppUser(data: ["userID": user.uid])
+            let timelineViewController = nextViewController.viewControllers?[0] as! TimelineController
+            timelineViewController.me = AppUser(data: ["userID": user.uid])
         }
     }
 

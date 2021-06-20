@@ -18,12 +18,16 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         userNameTextField.delegate = self
-        //userNameTextField.text = me.userName //現在のユーザー名を表示
+        
         // ログイン情報を取得
         auth = Auth.auth()
-        me = AppUser(data: ["userID": auth.currentUser!.uid])
-        userNameTextField.text = me.userName
         
+        Firestore.firestore().collection("users").document(auth.currentUser!.uid).getDocument { (snapshot, error) in
+            if error == nil, let snapshot = snapshot, let data = snapshot.data() {
+                self.me = AppUser(data: data)
+                self.userNameTextField.text = self.me.userName
+            }
+        }
     }
     
     //returnキーでキーボードを閉じる
@@ -57,5 +61,7 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
         accountViewController.modalPresentationStyle = .fullScreen
         present(accountViewController, animated: true, completion: nil)
     }
+    
+    
     
 }
