@@ -13,11 +13,17 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var userNameTextField: UITextField! //変更するユーザー名
     
     var me: AppUser!
+    var auth: Auth!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         userNameTextField.delegate = self
-        userNameTextField.text = me.userName //現在のユーザー名を表示
+        //userNameTextField.text = me.userName //現在のユーザー名を表示
+        // ログイン情報を取得
+        auth = Auth.auth()
+        me = AppUser(data: ["userID": auth.currentUser!.uid])
+        userNameTextField.text = me.userName
+        
     }
     
     //returnキーでキーボードを閉じる

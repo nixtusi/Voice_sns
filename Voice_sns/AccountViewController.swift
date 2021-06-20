@@ -41,12 +41,14 @@ class AccountViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    
+    // performSegueが呼ばれた時.senderには好きな値が入る.
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "Timeline" {
-            let nextViewController = segue.destination as! TimelineController
+            let nextViewController = segue.destination as! TabViewController
+            // senderをUserに変換している. user = self.auth.currentUser
             let user = sender as! User
-            nextViewController.me = AppUser(data: ["userID": user.uid])
+            let timelineViewController = nextViewController.viewControllers?[0] as! TimelineController
+            timelineViewController.me = AppUser(data: ["userID": user.uid])
         }
     }
     
