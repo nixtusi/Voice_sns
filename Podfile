@@ -9,6 +9,7 @@ target 'Voice_sns' do
   pod 'Firebase/Auth'
   pod 'Firebase/Core'
   pod 'Firebase/Firestore'
+  pod 'Firebase/Storage'
 
   target 'Voice_snsTests' do
     inherit! :search_paths

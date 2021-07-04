@@ -28,6 +28,8 @@
 		DAA04D46266C5C7B002D6C36 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA04D45266C5C7B002D6C36 /* AddViewController.swift */; };
 		DAA04D48266C951A002D6C36 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA04D47266C951A002D6C36 /* SettingsViewController.swift */; };
 		DAB05C07266C9C60001AFFEF /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB05C06266C9C60001AFFEF /* SignInViewController.swift */; };
+		DAFAB4B02691584A00396741 /* strage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFAB4AF2691584A00396741 /* strage.swift */; };
+		DAFAB4B22691728600396741 /* 001-sibutomo.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DAFAB4B12691728600396741 /* 001-sibutomo.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +83,8 @@
 		DAA04D45266C5C7B002D6C36 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		DAA04D47266C951A002D6C36 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		DAB05C06266C9C60001AFFEF /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		DAFAB4AF2691584A00396741 /* strage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = strage.swift; sourceTree = "<group>"; };
+		DAFAB4B12691728600396741 /* 001-sibutomo.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "001-sibutomo.mp3"; path = "../../../Downloads/001-sibutomo.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,7 +166,9 @@
 				DAA04D47266C951A002D6C36 /* SettingsViewController.swift */,
 				DAB05C06266C9C60001AFFEF /* SignInViewController.swift */,
 				DA67B5CF267EDAC4007E2CC5 /* TabViewController.swift */,
+				DAFAB4B12691728600396741 /* 001-sibutomo.mp3 */,
 				DA67B5D1267F0C0F007E2CC5 /* AudioRecoeder.swift */,
+				DAFAB4AF2691584A00396741 /* strage.swift */,
 			);
 			path = Voice_sns;
 			sourceTree = "<group>";
@@ -306,6 +312,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAFAB4B22691728600396741 /* 001-sibutomo.mp3 in Resources */,
 				5A0AD796264770C300624F78 /* LaunchScreen.storyboard in Resources */,
 				DA9D0B29265A00A500B6A5E7 /* GoogleService-Info.plist in Resources */,
 				5A0AD793264770C300624F78 /* Assets.xcassets in Resources */,
@@ -440,6 +447,7 @@
 				DA008DF8265A1F88003EA83B /* TimelineController.swift in Sources */,
 				DA67B5D2267F0C0F007E2CC5 /* AudioRecoeder.swift in Sources */,
 				5A0AD78E264770C100624F78 /* ViewController.swift in Sources */,
+				DAFAB4B02691584A00396741 /* strage.swift in Sources */,
 				DAA04D46266C5C7B002D6C36 /* AddViewController.swift in Sources */,
 				DA008DFA265A202F003EA83B /* AccountViewController.swift in Sources */,
 				DA008DF6265A1EED003EA83B /* AppUser.swift in Sources */,
