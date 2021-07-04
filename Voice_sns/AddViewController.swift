@@ -10,12 +10,15 @@ import AVFoundation
 
 class AddViewController: UIViewController {
     
-    @IBOutlet var contentTextView: UITextView!
+    var audioPlayer: AVAudioPlayer?
+    //　Storageを使うときに初期化するやつ
+    let storageRef = Storage.storage().reference()
+    
     // 録音しているかどうか
     var isRecording = false
     
     var isPlaying = false
-
+    
     var me: AppUser!
     var user: User!
     var auth: Auth!
@@ -25,19 +28,9 @@ class AddViewController: UIViewController {
     @IBOutlet weak var recordButton: UIButton!
     @IBOutlet weak var playButton: UIButton!
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // 枠のカラー
-        contentTextView.layer.borderColor = UIColor.black.cgColor
-
-        // 枠の幅
-        contentTextView.layer.borderWidth = 1.0
-
-        // 枠を角丸にする
-        contentTextView.layer.cornerRadius = 20.0
-        contentTextView.layer.masksToBounds = true
         
         // ログイン情報を取得
         auth = Auth.auth()
@@ -47,32 +40,46 @@ class AddViewController: UIViewController {
     }
     
     @IBAction func postContent() {
-        let content = contentTextView.text!
-            let saveDocument = Firestore.firestore().collection("posts").document()
-            saveDocument.setData([
-                "content": content,
-                "postID": saveDocument.documentID,
-                "senderID": me.userID,
-                "createdAt": FieldValue.serverTimestamp(),
-                "updatedAt": FieldValue.serverTimestamp()
-            ]) { error in
-                if error == nil {
-                    self.dismiss(animated: true, completion: nil)
-                }
+        
+        let fileName = "audio/" + UUID().uuidString + ".mp3"
+        
+        //Storageのaudio/correct.mp3という住所を指定
+        let audioRef = storageRef.child(fileName)
+        //ファイルを保存するときの設定
+        let newMetadata = StorageMetadata()
+        //音声ファイルですよって意味
+        newMetadata.contentType = "audio/mpeg";
+        //コンテンツを読み込んでいる
+        let data = try! Data(contentsOf: audioRecorder.getURL())
+        //DATAをアップロード
+        let uploadTask = audioRef.putData(data, metadata: newMetadata) { metadata,
+                                                                         error in
+            if let metadata = metadata {
+                print(metadata)
             }
+            
+            if let error = error {
+                print(error.localizedDescription)
+            }
+            
+        }
+        
+        let saveDocument = Firestore.firestore().collection("posts").document()
+        saveDocument.setData([
+            "content": fileName,
+            "postID": saveDocument.documentID,
+            "senderID": me.userID,
+            "createdAt": FieldValue.serverTimestamp(),
+            "updatedAt": FieldValue.serverTimestamp()
+        ]) { error in
+            if error == nil {
+                self.dismiss(animated: true, completion: nil)
+            }
+        }
     }
     
     @IBAction func closeModal() {
         self.dismiss(animated: true, completion: nil)
-    }
-
-    func setupTextView() {
-        let toolBar = UIToolbar() // キーボードの上に置くツールバーの生成
-        let flexibleSpaceBarButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil) // 今回は、右端にDoneボタンを置きたいので、左に空白を入れる
-        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissKeyboard)) // Doneボタン
-        toolBar.items = [flexibleSpaceBarButton, doneButton] // ツールバーにボタンを配置
-        toolBar.sizeToFit()
-        contentTextView.inputAccessoryView = toolBar
     }
     
     @IBAction func onRecordButtonClicked() {
@@ -113,11 +120,4 @@ class AddViewController: UIViewController {
             self.playButton.setImage(picture, for: .normal)
         }
     }
-
-    // キーボードを閉じる処理。
-    @objc func dismissKeyboard() {
-        contentTextView.resignFirstResponder()
-    }
-    
-    
 }

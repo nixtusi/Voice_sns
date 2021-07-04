@@ -7,8 +7,13 @@
 
 import UIKit
 import Firebase
+import AVFoundation
+import FirebaseStorage
 
 class TimelineController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    let storageRef = Storage.storage().reference()
+    var audioPlayer: AVAudioPlayer?
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return postArray.count
@@ -91,6 +96,30 @@ class TimelineController: UIViewController, UITableViewDataSource, UITableViewDe
         performSegue(withIdentifier: "Settings", sender: me)
     }
     
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(postArray[indexPath.row].content)
+        
+        let audioRef = storageRef.child(postArray[indexPath.row].content)
+            
+        audioRef.getData(maxSize: 1 * 1024 * 1024) {data, error in
+            if let error = error {
+                print("error")
+                print(error.localizedDescription)
+            } else {
+                if let mp3Data = data {
+                    do {
+                        self.audioPlayer = try AVAudioPlayer(data: mp3Data)
+                        self.audioPlayer?.prepareToPlay()
+                        self.audioPlayer?.play()
+                        print("correct")
+                    } catch {
+                        print("mp3Data error")
+                        print(error.localizedDescription)
+                    }
+                }
+            }
+        }
+        
+    }
 
 }

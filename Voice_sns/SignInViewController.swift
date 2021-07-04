@@ -13,6 +13,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet var emailTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
+    @IBOutlet var login: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,24 +21,21 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         emailTextField.placeholder = "メールアドレス"
         passwordTextField.delegate = self
         passwordTextField.placeholder = "パスワード"
+        
+        login.backgroundColor = UIColor.black // 背景色
+        login.layer.cornerRadius = 10.0 // 角丸のサイズ
+        login.setTitleColor(UIColor.white,for: UIControl.State.normal) // タイトルの色
+        
     }
-
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "Timeline" {
-//            let user = sender as! User
-//            let destination = segue.destination as! TimelineController
-//            destination.me = AppUser(data: ["userID": user.uid])
-//        }
-//    }
-    
    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "Timeline" {
-            let nextViewController = segue.destination as! TabViewController
-            let user = sender as! User
-            let timelineViewController = nextViewController.viewControllers?[0] as! TimelineController
-            timelineViewController.me = AppUser(data: ["userID": user.uid])
-        }
+                    let nextViewController = segue.destination as! UITabBarController
+                    let navigationController = nextViewController.viewControllers![0] as! UINavigationController
+                    let user = sender as! User
+                    let timelineViewController = navigationController.topViewController as! TimelineController
+                    timelineViewController.me = AppUser(data: ["userID": user.uid])
+                }
     }
 
     @IBAction func tappedSignInButton() {

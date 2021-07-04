@@ -13,6 +13,8 @@ class AccountViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var emailTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
     
+    @IBOutlet weak var makeAccounts: UIButton!
+    
     var auth: Auth!
     
     override func viewDidLoad() {
@@ -22,6 +24,11 @@ class AccountViewController: UIViewController, UITextFieldDelegate {
         emailTextField.placeholder = "メールアドレス"
         passwordTextField.delegate = self
         passwordTextField.placeholder = "パスワード(6文字以上)"
+        
+        makeAccounts.backgroundColor = UIColor.black // 背景色
+        makeAccounts.layer.cornerRadius = 10.0 // 角丸のサイズ
+        makeAccounts.setTitleColor(UIColor.white,for: UIControl.State.normal) // タイトルの色
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -44,12 +51,12 @@ class AccountViewController: UIViewController, UITextFieldDelegate {
     // performSegueが呼ばれた時.senderには好きな値が入る.
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "Timeline" {
-            let nextViewController = segue.destination as! TabViewController
-            // senderをUserに変換している. user = self.auth.currentUser
-            let user = sender as! User
-            let timelineViewController = nextViewController.viewControllers?[0] as! TimelineController
-            timelineViewController.me = AppUser(data: ["userID": user.uid])
-        }
+                    let nextViewController = segue.destination as! UITabBarController
+                    let navigationController = nextViewController.viewControllers![0] as! UINavigationController
+                    let user = sender as! User
+                    let timelineViewController = navigationController.topViewController as! TimelineController
+                    timelineViewController.me = AppUser(data: ["userID": user.uid])
+                }
     }
     
     @IBAction func registerAccount() {

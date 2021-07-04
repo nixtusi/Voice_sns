@@ -45,7 +45,7 @@ class AudioRecorder {
         audioPlayer.stop()
     }
     
-    private func getURL() -> URL {
+    func getURL() -> URL {
         return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("sound.m4a")
     }
     
