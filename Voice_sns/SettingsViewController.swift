@@ -11,12 +11,25 @@ import Firebase
 class SettingsViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet var userNameTextField: UITextField! //変更するユーザー名
+    @IBOutlet var saveButton: UIButton!
+    @IBOutlet var logoutButton: UIButton!
     
     var me: AppUser!
     var auth: Auth!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        saveButton.backgroundColor = UIColor.black // 背景色
+        saveButton.layer.cornerRadius = 10.0 // 角丸のサイズ
+        saveButton.setTitleColor(UIColor.white,for: UIControl.State.normal) // タイトルの色
+        
+        logoutButton.backgroundColor = UIColor.white // 背景色
+        logoutButton.layer.cornerRadius = 10.0 // 角丸のサイズ
+        logoutButton.setTitleColor(UIColor.red,for: UIControl.State.normal) // タイトルの色
+        logoutButton.layer.borderColor = UIColor.black.cgColor //枠線
+        logoutButton.layer.borderWidth = 1.0 //枠線の太さ
+        
         userNameTextField.delegate = self
         
         // ログイン情報を取得
@@ -28,6 +41,8 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
                 self.userNameTextField.text = self.me.userName
             }
         }
+        
+        userNameTextField.placeholder = "ユーザー名"
     }
     
     //returnキーでキーボードを閉じる
@@ -36,10 +51,10 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
-    //前の画面へ
-    @IBAction func back() {
-        dismiss(animated: true, completion: nil)
-    }
+//    //前の画面へ
+//    @IBAction func back() {
+//        dismiss(animated: true, completion: nil)
+//    }
     
     //保存
     @IBAction func save() {
