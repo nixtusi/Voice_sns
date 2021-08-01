@@ -50,7 +50,6 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
         textField.resignFirstResponder() // キーボードを閉じる
         return true
     }
-    
 //    //前の画面へ
 //    @IBAction func back() {
 //        dismiss(animated: true, completion: nil)
@@ -77,6 +76,9 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
         present(accountViewController, animated: true, completion: nil)
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
     
     
 }

@@ -47,28 +47,12 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate & UIN
         descriptionTextView.layer.borderColor = UIColor.black.cgColor //枠線
         descriptionTextView.layer.borderWidth = 1.0 //枠線の太さ
         
-//        chancelButton.backgroundColor = UIColor.black // 背景色
-//        chancelButton.layer.cornerRadius = 10.0 // 角丸のサイズ
-//        chancelButton.setTitleColor(UIColor.white,for: UIControl.State.normal) // タイトルの色
-        
         // ログイン情報を取得
         auth = Auth.auth()
         
         user = self.auth.currentUser
         me = AppUser(data: ["userID": user.uid])
     }
-    
-//    func getFileData(_ filePath: String) -> Data? {
-//        let fileData: Data?
-//        do {
-//            let fileUrl = URL(fileURLWithPath: filePath)
-//            fileData = try Data(contentsOf: URL(fileURLWithPath: fileUrl))
-//        } catch {
-//            // ファイルデータの取得でエラーの場合
-//            fileData = nil
-//        }
-//        return fileData
-//    }
     
     @IBAction func postContent() {
         
@@ -210,6 +194,15 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate & UIN
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         // モーダルビューを閉じる
         dismiss(animated: true, completion: nil)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder() // キーボードを閉じる
+        return true
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
     
 }
