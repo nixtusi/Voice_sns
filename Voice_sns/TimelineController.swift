@@ -39,6 +39,8 @@ class TimelineController: UIViewController{
                     self.getAudio(post.content)
                 }
                
+                self.collectionView.reloadData()
+                
             }
         }
         
@@ -128,14 +130,19 @@ class TimelineController: UIViewController{
         let pageIndex = Int(floor((scrollView.contentOffset.y - pageHeight / 2) / pageHeight) + 1)
         
         //音声を再生
-        do {
-            self.audioPlayer = try AVAudioPlayer(data: audioArray[pageIndex]!)
-            self.audioPlayer?.prepareToPlay()
-            self.audioPlayer?.play()
-            print("correct")
-        } catch {
-            print("mp3Data error")
-            print(error.localizedDescription)
+        if let audio = audioArray[pageIndex] {
+            //音声を再生
+            do {
+                self.audioPlayer = try AVAudioPlayer(data: audio)
+                self.audioPlayer?.prepareToPlay()
+                self.audioPlayer?.play()
+                print("correct")
+            } catch {
+                print("mp3Data error")
+                print(error.localizedDescription)
+            }
+        } else {
+            print("audio not found")
         }
         
     }
@@ -172,6 +179,6 @@ extension TimelineController: UICollectionViewDataSource {
 extension TimelineController: UICollectionViewDelegateFlowLayout {
     //cellの大きさを指定
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.size.width, height: view.frame.size.height - self.tabBarController!.tabBar.frame.size.height)
+        return CGSize(width: view.frame.size.width, height: view.frame.size.height - self.tabBarController!.tabBar.frame.size.height - self.navigationController!.navigationBar.frame.size.height)
     }
 }
