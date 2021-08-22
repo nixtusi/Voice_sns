@@ -9,6 +9,7 @@ import UIKit
 import Firebase
 import AVFoundation
 import FirebaseStorage
+import GoogleMobileAds
 
 class TimelineController: UIViewController{
     
@@ -21,9 +22,12 @@ class TimelineController: UIViewController{
     var postArray: [Post] = []
     var thumbnailArray: [Data?] = []
     var audioArray: [Data?] = []
+    
+    var bannerView: GADBannerView!
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         // 投稿を全部取得
         database.collection("posts").getDocuments { (snapshot, error) in
             if error == nil, let snapshot = snapshot {
@@ -56,6 +60,14 @@ class TimelineController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         database = Firestore.firestore()
+        
+        //GoogleAD
+        bannerView = GADBannerView(adSize: kGADAdSizeBanner)
+        addBannerViewToView(bannerView)
+        bannerView.adUnitID = "ca-app-pub-6063835734982611/6362577532"
+        //bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
         
         collectionView.isPagingEnabled = true
         collectionView.dataSource = self
@@ -145,6 +157,28 @@ class TimelineController: UIViewController{
             print("audio not found")
         }
         
+    }
+    
+    //GoogleAD
+    func addBannerViewToView(_ bannerView: GADBannerView) {
+        bannerView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(bannerView)
+        view.addConstraints(
+          [NSLayoutConstraint(item: bannerView,
+                              attribute: .bottom,
+                              relatedBy: .equal,
+                              toItem: bottomLayoutGuide,
+                              attribute: .top,
+                              multiplier: 1,
+                              constant: 0),
+           NSLayoutConstraint(item: bannerView,
+                              attribute: .centerX,
+                              relatedBy: .equal,
+                              toItem: view,
+                              attribute: .centerX,
+                              multiplier: 1,
+                              constant: 0)
+          ])
     }
 
 }

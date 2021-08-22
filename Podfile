@@ -10,6 +10,7 @@ target 'Voice_sns' do
   pod 'Firebase/Core'
   pod 'Firebase/Firestore'
   pod 'Firebase/Storage'
+  pod 'Google-Mobile-Ads-SDK'
 
   target 'Voice_snsTests' do
     inherit! :search_paths
