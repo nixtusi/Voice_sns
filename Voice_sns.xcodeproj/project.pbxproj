@@ -32,6 +32,7 @@
 		DAD0213E26D1EA4400BD27E3 /* PostCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD0213C26D1EA4400BD27E3 /* PostCollectionViewCell.swift */; };
 		DAD0213F26D1EA4400BD27E3 /* PostCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DAD0213D26D1EA4400BD27E3 /* PostCollectionViewCell.xib */; };
 		DAD6142B26A3E52900DF6E8D /* Postcell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD6142A26A3E52900DF6E8D /* Postcell.swift */; };
+		DAF73E0126F6D99B00D98897 /* profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF73E0026F6D99B00D98897 /* profile.swift */; };
 		DAFAB4B02691584A00396741 /* strage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFAB4AF2691584A00396741 /* strage.swift */; };
 		DAFAB4B22691728600396741 /* 001-sibutomo.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DAFAB4B12691728600396741 /* 001-sibutomo.mp3 */; };
 /* End PBXBuildFile section */
@@ -91,6 +92,7 @@
 		DAD0213C26D1EA4400BD27E3 /* PostCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCollectionViewCell.swift; sourceTree = "<group>"; };
 		DAD0213D26D1EA4400BD27E3 /* PostCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostCollectionViewCell.xib; sourceTree = "<group>"; };
 		DAD6142A26A3E52900DF6E8D /* Postcell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Postcell.swift; sourceTree = "<group>"; };
+		DAF73E0026F6D99B00D98897 /* profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profile.swift; sourceTree = "<group>"; };
 		DAFAB4AF2691584A00396741 /* strage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = strage.swift; sourceTree = "<group>"; };
 		DAFAB4B12691728600396741 /* 001-sibutomo.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "001-sibutomo.mp3"; path = "../../../Downloads/001-sibutomo.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -181,6 +183,7 @@
 				DAD6142A26A3E52900DF6E8D /* Postcell.swift */,
 				DAD0213C26D1EA4400BD27E3 /* PostCollectionViewCell.swift */,
 				DAD0213D26D1EA4400BD27E3 /* PostCollectionViewCell.xib */,
+				DAF73E0026F6D99B00D98897 /* profile.swift */,
 			);
 			path = Voice_sns;
 			sourceTree = "<group>";
@@ -467,6 +470,7 @@
 				DA008DF6265A1EED003EA83B /* AppUser.swift in Sources */,
 				DAD6142B26A3E52900DF6E8D /* Postcell.swift in Sources */,
 				5A0AD78A264770C100624F78 /* AppDelegate.swift in Sources */,
+				DAF73E0126F6D99B00D98897 /* profile.swift in Sources */,
 				DA67B5D0267EDAC4007E2CC5 /* TabViewController.swift in Sources */,
 				DAD0213E26D1EA4400BD27E3 /* PostCollectionViewCell.swift in Sources */,
 				5A0AD78C264770C100624F78 /* SceneDelegate.swift in Sources */,

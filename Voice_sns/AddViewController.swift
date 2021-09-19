@@ -31,6 +31,8 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate & UIN
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var descriptionTextView: UITextView!
     
+    @IBOutlet weak var choicephoto: UIButton!
+    
     @IBOutlet var postButton: UIButton!
     @IBOutlet var chancelButton: UIButton!
     
@@ -44,8 +46,14 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate & UIN
         postButton.layer.cornerRadius = 10.0 // 角丸のサイズ
         postButton.setTitleColor(UIColor.white,for: UIControl.State.normal) // タイトルの色
         
+        choicephoto.backgroundColor = UIColor(red: 149/255, green: 235/255, blue: 255/255, alpha: 1.0) // 背景色
+        choicephoto.layer.cornerRadius = 10.0 // 角丸のサイズ
+        choicephoto.setTitleColor(UIColor.white,for: UIControl.State.normal) // タイトルの色
+        
         descriptionTextView.layer.borderColor = UIColor.black.cgColor //枠線
         descriptionTextView.layer.borderWidth = 1.0 //枠線の太さ
+        descriptionTextView.layer.cornerRadius = 10.0 //角丸
+        descriptionTextView.layer.masksToBounds = true
         
         // ログイン情報を取得
         auth = Auth.auth()
