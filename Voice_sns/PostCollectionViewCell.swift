@@ -16,7 +16,8 @@ class PostCollectionViewCell: UICollectionViewCell {
     @IBOutlet var userNameLabel: UILabel!
     
     //説明
-    @IBOutlet var descriptionLabel: UILabel!
+    @IBOutlet var descriptionLabel: UITextView!
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,6 +25,7 @@ class PostCollectionViewCell: UICollectionViewCell {
         layer.cornerRadius = 3
         layer.borderColor = UIColor.blue.cgColor
         layer.borderWidth = 3
+        
     }
     
     func configure(imageData: Data?, userName: String, description: String) {

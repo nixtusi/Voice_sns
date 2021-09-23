@@ -11,9 +11,15 @@ import Firebase
 class profile: UIViewController, UITextFieldDelegate {
     @IBOutlet var logoutButton: UIButton!
     @IBOutlet var nowName: UILabel!
+    @IBOutlet var iconPhoto: UIImageView!
+    
     
     var me: AppUser!
     var auth: Auth!
+    var photoURL: String!
+    var thumbnailArray: [Data?] = []
+    
+    let storageRef = Storage.storage().reference()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,8 +37,43 @@ class profile: UIViewController, UITextFieldDelegate {
             if error == nil, let snapshot = snapshot, let data = snapshot.data() {
                 self.me = AppUser(data: data)
                 self.nowName.text = self.me.userName
+                self.photoURL = self.me.photoURL
+            }
+            
+            //let photoRef = self.storageRef.child(photoURL)
+        }
+        
+        func getThumnail(_ photoURL:String) {
+            let photoRef = self.storageRef.child(photoURL)
+            
+            if photoURL != "" {
+                photoRef.getData(maxSize: 30 * 1024 * 1024) {data, error in
+                    if let error = error {
+                        print("error")
+                        print(error.localizedDescription)
+                    }else{
+                        if let imageData = data {
+                            //self.thumbnailArray.append(imageData)
+                            //thumbnailArray[1].sd_setImage(with: photoRef)
+                            print("画像ああああああ")
+                        }else{
+                            self.thumbnailArray.append(nil)
+                            print("画像なし")
+                        }
+                    }
+                }
+            }else{
+                self.thumbnailArray.append(nil)
             }
         }
+        
+        //if let data = imageData {
+        //iconPhoto.image = UIImage(systemName: data)
+        //} else {
+            //iconPhoto.image = UIImage(systemName: "music.note")
+        //}
+        
+        
     }
     
     //ログアウト
@@ -43,5 +84,7 @@ class profile: UIViewController, UITextFieldDelegate {
         accountViewController.modalPresentationStyle = .fullScreen
         present(accountViewController, animated: true, completion: nil)
     }
+    
+    
     
 }

@@ -149,7 +149,6 @@
                                     <color key="titleColor" systemColor="systemPinkColor"/>
                                 </state>
                                 <connections>
-                                    <action selector="logout" destination="Kt7-jk-nvv" eventType="touchUpInside" id="IZL-Bu-x4k"/>
                                     <action selector="logout" destination="6hi-xo-2yI" eventType="touchUpInside" id="Qw9-Ry-0dh"/>
                                 </connections>
                             </button>
@@ -221,6 +220,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="30"/>
                                 <state key="normal" title="画像選択"/>
+                                <connections>
+                                    <action selector="choosephotoWith_sender:" destination="Kt7-jk-nvv" eventType="touchUpInside" id="asB-8F-zas"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ユーザー名" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mCF-qF-uHl">
                                 <rect key="frame" x="8" y="424" width="374" height="54"/>
@@ -243,6 +245,7 @@
                     <connections>
                         <outlet property="saveButton" destination="ZzV-Xs-yhw" id="2zL-2o-PUf"/>
                         <outlet property="userNameTextField" destination="mf5-zJ-zgr" id="VL8-2O-aR7"/>
+                        <outlet property="verificationImage" destination="zeG-14-0UR" id="jBd-YJ-x3p"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fLq-Sa-thP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -264,10 +267,13 @@
                                     <navigationItem title="Title" id="MLQ-Zp-Ed9"/>
                                 </items>
                             </navigationBar>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="VSS-co-6F4">
-                                <rect key="frame" x="0.0" y="88" width="390" height="720"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="VSS-co-6F4">
+                                <rect key="frame" x="0.0" y="88" width="390" height="673"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="673" id="AYX-HI-ese"/>
+                                    <constraint firstAttribute="width" constant="390" id="Pxj-Lv-dRm"/>
+                                </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Sf6-Gu-bna">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
