@@ -18,6 +18,8 @@ class PostCollectionViewCell: UICollectionViewCell {
     //説明
     @IBOutlet var descriptionLabel: UITextView!
     
+    @IBOutlet var iconImage: UIImageView!
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()

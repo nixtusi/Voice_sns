@@ -53,7 +53,6 @@ class SettingsViewController: UIViewController, UITextFieldDelegate, UIImagePick
     @IBAction func save() {
         
         //画像をアップロード
-//        var photo = UIImage(named: "image99.png")?.pngData()
         var photo = verificationImage.image?.pngData()
         let photoName = "images/" + UUID().uuidString + ".jpg"
         let photoRef = storageRef.child(photoName)

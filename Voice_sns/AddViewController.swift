@@ -48,7 +48,7 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate & UIN
         
         choicephoto.backgroundColor = UIColor(red: 149/255, green: 235/255, blue: 255/255, alpha: 1.0) // 背景色
         choicephoto.layer.cornerRadius = 10.0 // 角丸のサイズ
-        choicephoto.setTitleColor(UIColor.white,for: UIControl.State.normal) // タイトルの色
+        choicephoto.setTitleColor(UIColor.black,for: UIControl.State.normal) // タイトルの色
         
         descriptionTextView.layer.borderColor = UIColor.black.cgColor //枠線
         descriptionTextView.layer.borderWidth = 1.0 //枠線の太さ

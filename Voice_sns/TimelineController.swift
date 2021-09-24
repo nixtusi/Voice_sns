@@ -42,9 +42,8 @@ class TimelineController: UIViewController{
                     self.getThumnail(post.photoURL)
                     self.getAudio(post.content)
                 }
-               
+
                 self.collectionView.reloadData()
-                
             }
         }
         
@@ -55,6 +54,7 @@ class TimelineController: UIViewController{
                 self.me = AppUser(data: data)
             }
         }
+        
     }
     
     override func viewDidLoad() {
@@ -114,6 +114,7 @@ class TimelineController: UIViewController{
             self.thumbnailArray.append(nil)
         }
     }
+    
     
     func getAudio(_ audioURL: String) {
         let audioRef = storageRef.child(audioURL)
@@ -189,6 +190,7 @@ extension TimelineController: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! PostCollectionViewCell
         let post = postArray[indexPath.row]
         let thumbnail = thumbnailArray[indexPath.row]
+        //let iconImage = photoURL
         cell.configure(imageData: thumbnail, userName: post.userName, description: post.description)
         return cell
     }
@@ -208,6 +210,7 @@ extension TimelineController: UICollectionViewDataSource {
             audioPlayer?.play()
         }
     }
+    
 }
 
 extension TimelineController: UICollectionViewDelegateFlowLayout {
