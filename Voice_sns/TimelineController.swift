@@ -189,8 +189,10 @@ extension TimelineController: UICollectionViewDataSource {
         print("hoge")
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! PostCollectionViewCell
         let post = postArray[indexPath.row]
-        //let thumbnail = thumbnailArray[indexPath.row]
+        
+        //エラー箇所
         let thumbnail = thumbnailArray[indexPath.row]
+        
         //let iconImage = photoURL
         cell.configure(imageData: thumbnail, userName: post.userName, description: post.description)
         return cell
