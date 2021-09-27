@@ -32,9 +32,9 @@
 		DAD0213E26D1EA4400BD27E3 /* PostCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD0213C26D1EA4400BD27E3 /* PostCollectionViewCell.swift */; };
 		DAD0213F26D1EA4400BD27E3 /* PostCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DAD0213D26D1EA4400BD27E3 /* PostCollectionViewCell.xib */; };
 		DAD6142B26A3E52900DF6E8D /* Postcell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD6142A26A3E52900DF6E8D /* Postcell.swift */; };
+		DAEDAF5B2701E99D00225114 /* 001-sibutomo.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DAEDAF5A2701E99D00225114 /* 001-sibutomo.mp3 */; };
 		DAF73E0126F6D99B00D98897 /* profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF73E0026F6D99B00D98897 /* profile.swift */; };
 		DAFAB4B02691584A00396741 /* strage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFAB4AF2691584A00396741 /* strage.swift */; };
-		DAFAB4B22691728600396741 /* 001-sibutomo.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DAFAB4B12691728600396741 /* 001-sibutomo.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,9 +92,9 @@
 		DAD0213C26D1EA4400BD27E3 /* PostCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCollectionViewCell.swift; sourceTree = "<group>"; };
 		DAD0213D26D1EA4400BD27E3 /* PostCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostCollectionViewCell.xib; sourceTree = "<group>"; };
 		DAD6142A26A3E52900DF6E8D /* Postcell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Postcell.swift; sourceTree = "<group>"; };
+		DAEDAF5A2701E99D00225114 /* 001-sibutomo.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "001-sibutomo.mp3"; sourceTree = SOURCE_ROOT; };
 		DAF73E0026F6D99B00D98897 /* profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profile.swift; sourceTree = "<group>"; };
 		DAFAB4AF2691584A00396741 /* strage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = strage.swift; sourceTree = "<group>"; };
-		DAFAB4B12691728600396741 /* 001-sibutomo.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "001-sibutomo.mp3"; path = "../../../Downloads/001-sibutomo.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,7 +177,7 @@
 				DAA04D47266C951A002D6C36 /* SettingsViewController.swift */,
 				DAB05C06266C9C60001AFFEF /* SignInViewController.swift */,
 				DA67B5CF267EDAC4007E2CC5 /* TabViewController.swift */,
-				DAFAB4B12691728600396741 /* 001-sibutomo.mp3 */,
+				DAEDAF5A2701E99D00225114 /* 001-sibutomo.mp3 */,
 				DA67B5D1267F0C0F007E2CC5 /* AudioRecoeder.swift */,
 				DAFAB4AF2691584A00396741 /* strage.swift */,
 				DAD6142A26A3E52900DF6E8D /* Postcell.swift */,
@@ -328,11 +328,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				DAD0213F26D1EA4400BD27E3 /* PostCollectionViewCell.xib in Resources */,
-				DAFAB4B22691728600396741 /* 001-sibutomo.mp3 in Resources */,
 				5A0AD796264770C300624F78 /* LaunchScreen.storyboard in Resources */,
 				DA9D0B29265A00A500B6A5E7 /* GoogleService-Info.plist in Resources */,
 				5A0AD793264770C300624F78 /* Assets.xcassets in Resources */,
 				5A0AD791264770C100624F78 /* Main.storyboard in Resources */,
+				DAEDAF5B2701E99D00225114 /* 001-sibutomo.mp3 in Resources */,
 				DA1408DF26B634E800473390 /* image99.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
